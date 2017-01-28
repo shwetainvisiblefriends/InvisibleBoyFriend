@@ -1,0 +1,107 @@
+
+
+<div><h1>Create Account</h1></div>
+<div class="container" style="background-color: #E6DEd1; margin-top:1%;padding: 20px 40px;padding-bottom: 80px;">
+
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <form  method="post"  name="registrationForm" ng-submit="registration()">
+          
+          <button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+          <div style="display:none">
+          <input type="hidden" value="">
+          <input  type="hidden" >
+          </div>
+            
+            
+            <input  type="hidden" >
+            <input  type="hidden" >
+
+
+<div class="form-group row">
+              <div class="col-sm-12">
+
+                <span class="textGreen">{{message}}</span>
+                
+            
+            </div>
+            </div>
+
+
+
+
+
+            <div class="form-group row">
+           
+              <div class="col-sm-12" ng-class="getFontColor()">
+                <label for="user_email"  ng-class="{'errorText': changeColorForText === 'error', 'warningText': changeColorForText === 'warning','textGreen': changeColorForText === 'success'}"    class="control-label" >Email Address</label>
+                <span class="errorText" ng-show="registrationForm.$dirty && registrationForm.email.$error.required">This is a required field.</span>
+                <span class="errorText" ng-show="registrationForm.$dirty && registrationForm.email.$invalid">This field is invalid. </span>
+                <input type="email" autofocus="autofocus" class="form-control email" name="email" ng-model="signUpDetails.email" placeholder="Enter an e-mail address" ng-keyup="changeColor(registrationForm.email.$error.required,registrationForm.email.$invalid,'email')"  required>
+            
+            </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label for="user_name"  ng-class="{'errorText': changeTextForFirstName === 'error', 'warningText': changeTextForFirstName === 'warning','textGreen': changeTextForFirstName === 'success'}"  class="control-label">First Name</label>
+               <span class="errorText" ng-show="registrationForm.$dirty &&registrationForm.firstName.$error.required" style="margin-left: 15px;">This is a required field</span>
+                </div>
+                <div class="col-sm-6">
+                 <input autofocus="autofocus" name ="firstName" class="form-control name" ng-model="signUpDetails.firstName" placeholder="First name" type="text" required  ng-keyup="changeColor(registrationForm.firstName.$error.required,registrationForm.firstName.$invalid,'fname')"></div>
+                 <div class="col-sm-6">
+                 <input autofocus="autofocus" class="form-control"  ng-model="signUpDetails.lastName" placeholder="Last Name" type="text" ></div>
+             <div class="errorText" ng-show="registrationForm.$dirty">
+             
+                                     
+                                  
+              </div>
+              </div>
+              
+             <!-- .form-group -->
+
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label for="user_password"   ng-class="{'errorText': changeTextForPassword === 'error', 'warningText': changeTextForPassword === 'warning','textGreen': changeTextForPassword === 'success'}"  class="control-label">Create a Password</label>
+                <span class="errorText"  ng-show="registrationForm.$dirty && registrationForm.password.$error.required">This is a required field</span>
+                <input autofocus="autofocus" class="form-control password" name="password" ng-model="signUpDetails.password" placeholder="Create a password" type="password" ng-keyup="changeColor(registrationForm.password.$error.required,registrationForm.password.$invalid,'pass')" required>
+              <!-- <div class="errorText" ng-show="registrationForm.$dirty">
+                                      <span ng-show="registrationForm.password.$error.required">This is a required field</span>
+                                     
+                                  </div> -->
+             
+              </div></div>
+              <div class="form-group row">
+              <div class="col-sm-12">
+              <!--  <label for="user_password" class="control-label">Re-Type  Password</label> -->
+              
+                <input autofocus="autofocus" class="form-control password" ng-model="signUpDetails.rePassword" name ="rePassword" placeholder="Re-enter password to confirm" type="password" required >
+        <div class="errorText">  {{errorMessage}}</div>
+         <div class="errorText" ng-show="registrationForm.$dirty">
+                                      <span ng-show="registrationForm.rePassword.$error.required">This is a required field</span>
+                                     
+                                  </div>
+         </div>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col-sm-12 checkbox">
+                <input type="hidden" >
+                <input type="checkbox">
+                <span for="user_agree_terms" style="
+    margin-left: 24px;
+">I am at least 18 years old, and I have read and agree to the <span data-toggle="modal" data-target="#terms-modal">terms and conditions</span>.</span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <input type="hidden" >
+                <input class="btn btn-primary btn-block" name="commit" type="submit" value="activate &amp; login">
+                <span class="help-block text-center">Already have an account? <a href="#">Sign in.</a></span>
+               
+              </div>
+            </div>
+</form>        </div>
+      </div>
+    </div>
